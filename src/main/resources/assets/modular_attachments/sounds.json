@@ -1,0 +1,22 @@
+{
+  "equip": {
+    "sounds": [
+      "modular_attachments:equip"
+    ]
+  },
+  "unequip": {
+    "sounds": [
+      "modular_attachments:unequip"
+    ]
+  },
+  "dwop": {
+    "sounds": [
+      "modular_attachments:dwop"
+    ]
+  },
+  "dwop_reverse": {
+    "sounds": [
+      "modular_attachments:dwop_reverse"
+    ]
+  }
+}

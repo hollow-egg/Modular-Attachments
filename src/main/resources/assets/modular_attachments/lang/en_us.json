@@ -1,0 +1,8 @@
+{
+  "tooltip.modular_attachments.no_upgrade": "No upgrade (right click to attach)",
+  "tooltip.modular_attachments.upgrade": "Upgraded",
+  "tooltip.modular_attachments.modifier": "Modifiers:",
+  "tooltip.modular_attachments.modifier_shift": "Modifiers: Press SHIFT",
+  "tooltip.modular_attachments.modifier.test": "TEST",
+  "attribute.name.modular_attachments.test": "TEST"
+}
