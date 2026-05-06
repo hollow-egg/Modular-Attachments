@@ -1,6 +1,5 @@
 {
   "values": [
-    "minecraft:iron_sword",
-    "minecraft:iron_block"
+    "#minecraft:enchantable/mining"
   ]
 }

@@ -39,22 +39,22 @@ public class CommonEvents {
 
         boolean equipped = true;
         if (ItemUtils.isUpgrade(carried)) {
-            if (currentUpgrade.isEmpty()) {
+            if (currentUpgrade.isEmpty()) { // add upgrade
                 ItemUtils.setUpgrade(slotItem, carried.copyWithCount(1), event.getPlayer().registryAccess());
                 event.getCarriedSlotAccess().get().shrink(1);
                 event.setCanceled(true);
-            } else if (carried.getCount() == 1) {
+            } else if (carried.getCount() == 1) { //swap upgrades
                 ItemUtils.setUpgrade(slotItem, carried.copyWithCount(1), event.getPlayer().registryAccess());
                 event.getCarriedSlotAccess().set(currentUpgrade.copy());
                 event.setCanceled(true);
-            } else if (ItemStack.isSameItemSameComponents(carried, currentUpgrade)) {
+            } else if (ItemStack.isSameItemSameComponents(carried, currentUpgrade)) { //remove upgrade into stack
                 int transferAmount = Math.min(carried.getMaxStackSize() - carried.getCount(), currentUpgrade.getCount());
                 ItemUtils.setUpgrade(slotItem, currentUpgrade.copyWithCount(currentUpgrade.getCount() - transferAmount), event.getPlayer().registryAccess());
                 event.getCarriedSlotAccess().get().grow(transferAmount);
                 event.setCanceled(true);
                 equipped = false;
             }
-        } else if (!currentUpgrade.isEmpty() && carried.isEmpty()) {
+        } else if (!currentUpgrade.isEmpty() && carried.isEmpty()) { // remove upgrade
             ItemUtils.setUpgrade(slotItem, ItemStack.EMPTY, event.getPlayer().registryAccess());
             event.getCarriedSlotAccess().set(currentUpgrade.copy());
             event.setCanceled(true);
